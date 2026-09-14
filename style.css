@@ -51,7 +51,7 @@ header {
 form {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 20px;
   background: rgb(7 25 49 / 50%);
   border-radius: 50px;
   padding: 8px 18px;
@@ -97,4 +97,41 @@ button {
   margin: 10px 0 0 40px;
   color: #b7c9e3;
   font-size: 15px;
+}
+
+.weather-icon {
+  width: 90px;
+  height: 90px;
+  background: url(./images/weather.png);
+  background-size: 100% 100%;
+}
+
+.temperature-row {
+  display: flex;
+  align-items: center;
+  margin-top: 40px;
+  gap: 40px;
+}
+
+.temperature {
+  display: flex;
+}
+
+.temperature p {
+  font-size: 100px;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1;
+}
+
+.temperature sup {
+  font-size: 36px;
+  font-weight: 700;
+  top: 30px;
+}
+
+.condition {
+  font-size: 22px;
+  font-weight: 600;
+  margin: 10px 0 0 0;
 }
