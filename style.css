@@ -121,11 +121,9 @@ button:hover {
   font-size: 15px;
 }
 
-.weather-icon {
+.weather-icon img {
   width: 90px;
   height: 90px;
-  background: url(./images/weather.png);
-  background-size: 100% 100%;
 }
 
 .temperature-row {
@@ -152,6 +150,13 @@ button:hover {
   top: 30px;
 }
 
+.temperature span {
+  font-size: 100px;
+  font-weight: 700;
+  margin: 0px 10px;
+  line-height: 1;
+}
+
 .weather-condition {
   font-size: 22px;
   font-weight: 600;
@@ -166,6 +171,7 @@ button:hover {
   align-items: center;
   gap: 20px;
   border-radius: 17px;
+  min-height: 160px;
   transition: all 0.3s ease;
 }
 
@@ -195,6 +201,7 @@ button:hover {
   font-size: 24px;
   margin: 0;
   font-weight: 700;
+  display: flex;
 }
 
 .details span {
@@ -247,4 +254,32 @@ footer a {
 
 footer a:hover {
   color: var(--text2);
+}
+
+@media screen and (max-width: 768px) {
+  header {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .weather-panel-sec {
+    padding: 30px 20px;
+  }
+
+  .temperature-row {
+    flex-direction: column;
+  }
+
+  .temperature p {
+    font-size: 40px;
+  }
+
+  .temperature span {
+    font-size: 40px;
+  }
+
+  .temperature sup {
+    font-size: 20px;
+    top: 10px;
+  }
 }

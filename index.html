@@ -31,7 +31,12 @@
         <form onsubmit="getWeather(event)">
           <div class="d-flex align-items-center gap-2">
             <i class="fa-solid fa-location-dot"></i>
-            <input type="text" placeholder="Enter city..." required />
+            <input
+              type="text"
+              id="input-value"
+              placeholder="Enter city..."
+              required
+            />
           </div>
           <button type="submit">Search</button>
         </form>
@@ -39,19 +44,25 @@
       <section class="weather-panel-sec">
         <div class="weather-panel">
           <div class="weather-date-row">
-            <p id="city" class="city">
-              <i class="fa-solid fa-location-dot"></i> Search a location
+            <p class="city">
+              <i class="fa-solid fa-location-dot"></i>
+              <span id="city">Search a location</span>
             </p>
             <p id="date" class="date">Enter a city to get live weather</p>
           </div>
           <div class="temperature-row">
-            <div id="weatherIcon" class="weather-icon"></div>
+            <div class="weather-icon">
+              <img src="./images/weather.png" id="weather-icon" alt="" />
+            </div>
             <div>
               <div class="temperature">
-                <p id="temperature">--</p>
+                <p id="temperature-celsius">--</p>
                 <sup>°C</sup>
+                <span>/</span>
+                <p id="temperature-fahrenheit">--</p>
+                <sup>°F</sup>
               </div>
-              <p id="weatherCondition" class="weather-condition">
+              <p id="weather-condition" class="weather-condition">
                 Waiting for location
               </p>
             </div>
@@ -67,7 +78,18 @@
               </div>
               <div class="details">
                 <p>Feels Like</p>
-                <p><span id="feelLike">--</span><span>°C</span></p>
+                <p>
+                  <span class="d-flex flex-column">
+                    <span class="d-flex">
+                      <span id="feel-like-celsius">--</span>
+                      <span>°C</span>
+                    </span>
+                    <span class="d-flex">
+                      <span id="feel-like-fahrenheit">--</span>
+                      <span>°F</span>
+                    </span>
+                  </span>
+                </p>
               </div>
             </div>
           </div>
@@ -89,7 +111,18 @@
               </div>
               <div class="details">
                 <p>Wind Speed</p>
-                <p><span id="windSpeed">--</span><span>km/h</span></p>
+                <p>
+                  <span class="d-flex flex-column">
+                    <span class="d-flex">
+                      <span id="wind-speed-kmh">--</span>
+                      <span>KM/H</span>
+                    </span>
+                    <span class="d-flex">
+                      <span id="wind-speed-mph">--</span>
+                      <span>MP/H</span>
+                    </span>
+                  </span>
+                </p>
               </div>
             </div>
           </div>
@@ -100,7 +133,18 @@
               </div>
               <div class="details">
                 <p>Pressure</p>
-                <p><span id="pressure">--</span><span>hPa</span></p>
+                <p>
+                  <span class="d-flex flex-column">
+                    <span class="d-flex">
+                      <span id="pressure-mb">--</span>
+                      <span>MB</span>
+                    </span>
+                    <span class="d-flex">
+                      <span id="pressure-in">--</span>
+                      <span>IN</span>
+                    </span>
+                  </span>
+                </p>
               </div>
             </div>
           </div>
@@ -111,7 +155,18 @@
               </div>
               <div class="details">
                 <p>Visibility</p>
-                <p><span id="visibility">--</span><span>km</span></p>
+                <p>
+                  <span class="d-flex flex-column">
+                    <span class="d-flex">
+                      <span id="visibility-km">--</span>
+                      <span>KM</span>
+                    </span>
+                    <span class="d-flex">
+                      <span id="visibility-miles">--</span>
+                      <span>Miles</span>
+                    </span>
+                  </span>
+                </p>
               </div>
             </div>
           </div>
@@ -122,7 +177,7 @@
               </div>
               <div class="details">
                 <p>Rain / Precipitation</p>
-                <p><span id="rain">--</span><span>mm</span></p>
+                <p><span id="rain">--</span><span>MM</span></p>
               </div>
             </div>
           </div>
@@ -133,18 +188,18 @@
               </div>
               <div class="details">
                 <p>UV Index</p>
-                <p><span id="uvIndex">--</span></p>
+                <p><span id="uv-index">--</span></p>
               </div>
             </div>
           </div>
           <div class="col-md-3 col-sm-12 pt-2 pb-2">
             <div class="box-details">
               <div class="icon-box pink">
-                <i class="fa-solid fa-mountain-sun"></i>
+                <i class="fa-solid fa-snowflake"></i>
               </div>
               <div class="details">
-                <p>Sunrise</p>
-                <p><span id="sunrise">--</span></p>
+                <p>Snow</p>
+                <p><span id="snow">--</span><span>CM</span></p>
               </div>
             </div>
           </div>
@@ -155,5 +210,8 @@
         <a href="https://github.com/hashirdilmuradzai">Hashir Dilmurad Zai</a>
       </footer>
     </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./script.js"></script>
   </body>
 </html>
