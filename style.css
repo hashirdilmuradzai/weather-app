@@ -1,18 +1,29 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
+:root {
+  --primary: #4d9cff;
+  --secondary: #7950ed;
+  --border: rgba(120, 173, 235, 0.6);
+  --border2: rgba(120, 185, 255, 0.75);
+  --bg: rgb(7 25 49 / 50%);
+  --bg2: rgba(9, 34, 66, 0.78);
+  --shadow: rgba(0, 0, 0, 0.3);
+  --text: #fff;
+  --text2: #a9bad2;
+}
+
 * {
   margin: 0;
   padding: 0;
 }
 
 body {
-  background:
-    linear-gradient(rgba(3, 14, 29, 0.55), rgba(3, 14, 29, 0.8)),
-    url("./images/bg.jpg");
-  background-position: center;
-  background-size: cover;
-  color: #fff;
-  height: 100vh;
+  background: linear-gradient(var(--bg)), url("./images/bg.png");
+  background-position: bottom;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  color: var(--text);
+  height: 100%;
   margin: 0;
   font-family: "Montserrat", sans-serif;
 }
@@ -43,7 +54,7 @@ header {
 }
 
 .left-side p {
-  color: #a9bdd9;
+  color: var(--text2);
   margin: 0;
   font-size: 14px;
 }
@@ -51,40 +62,51 @@ header {
 form {
   display: flex;
   align-items: center;
-  gap: 20px;
-  background: rgb(7 25 49 / 50%);
+  background: var(--bg);
   border-radius: 50px;
   padding: 8px 18px;
   width: 100%;
   max-width: 570px;
   justify-content: space-between;
-  border: 1px solid rgba(120, 173, 235, 0.55);
+  border: 1px solid var(--border);
+  transition: all 0.3s ease;
+}
+
+form:hover,
+form:focus-within {
+  border-color: var(--border2);
 }
 
 input {
   background: none;
   outline: none;
   border: none;
-  color: #fff;
+  color: var(--text);
   font-size: 16px;
+  width: 100%;
 }
 
 button {
   border: 0;
-  background: linear-gradient(135deg, #4d9cff, #7950ed);
-  color: #fff;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: var(--text);
   font-weight: 700;
   font-size: 15px;
   padding: 13px 25px;
   border-radius: 50px;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background: linear-gradient(235deg, var(--primary), var(--secondary));
 }
 
 .weather-panel-sec {
   padding: 38px 58px;
-  border: 1px solid rgba(104, 169, 239, 0.55);
+  border: 1px solid var(--border);
   border-radius: 18px;
-  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.25);
-  background: linear-gradient(90deg, rgba(7, 27, 56, 50%));
+  box-shadow: 0 25px 80px var(--shadow);
+  background: var(--bg);
 }
 
 .city {
@@ -94,8 +116,8 @@ button {
 }
 
 .date {
-  margin: 10px 0 0 40px;
-  color: #b7c9e3;
+  margin: 0 0 0 40px;
+  color: var(--text2);
   font-size: 15px;
 }
 
@@ -130,8 +152,99 @@ button {
   top: 30px;
 }
 
-.condition {
+.weather-condition {
   font-size: 22px;
   font-weight: 600;
   margin: 10px 0 0 0;
+}
+
+.box-details {
+  padding: 25px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border-radius: 17px;
+  transition: all 0.3s ease;
+}
+
+.box-details:hover {
+  transform: translateY(-5px);
+  border-color: var(--border2);
+  background: var(--bg2);
+}
+
+.icon-box {
+  width: 58px;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 17px;
+  font-size: 27px;
+}
+
+.details p:nth-child(1) {
+  font-size: 14px;
+  margin: 0 0 9px 0;
+  color: var(--text2);
+}
+
+.details p:nth-child(2) {
+  font-size: 24px;
+  margin: 0;
+  font-weight: 700;
+}
+
+.details span {
+  margin: 0 2px;
+}
+
+.red {
+  background: linear-gradient(135deg, #ff5252, #e83963);
+}
+
+.blue {
+  background: linear-gradient(135deg, #2589ff, #1556c7);
+}
+
+.green {
+  background: linear-gradient(135deg, #27d4ad, #069e86);
+}
+
+.purple {
+  background: linear-gradient(135deg, #9064ff, #6040d9);
+}
+
+.yellow {
+  background: linear-gradient(135deg, #e6ae31, #a87313);
+}
+
+.cyan {
+  background: linear-gradient(135deg, #4b71ff, #403bc0);
+}
+
+.orange {
+  background: linear-gradient(135deg, #ff9a3c, #ed5c27);
+}
+
+.pink {
+  background: linear-gradient(135deg, #ff639d, #bd3e79);
+}
+
+footer {
+  text-align: center;
+  color: var(--text2);
+  font-size: 14px;
+  margin: 28px 0 25px 0;
+}
+
+footer a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: var(--text2);
 }

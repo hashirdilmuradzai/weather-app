@@ -29,7 +29,7 @@
           </div>
         </div>
         <form onsubmit="getWeather(event)">
-          <div>
+          <div class="d-flex align-items-center gap-2">
             <i class="fa-solid fa-location-dot"></i>
             <input type="text" placeholder="Enter city..." required />
           </div>
@@ -51,11 +51,109 @@
                 <p id="temperature">--</p>
                 <sup>°C</sup>
               </div>
-              <p id="condition" class="condition">Waiting for location</p>
+              <p id="weatherCondition" class="weather-condition">
+                Waiting for location
+              </p>
             </div>
           </div>
         </div>
       </section>
+      <section class="mt-5 mb-3">
+        <div class="row">
+          <div class="col-md-3 col-sm-12 pt-2 pb-2">
+            <div class="box-details">
+              <div class="icon-box red">
+                <i class="fa-solid fa-temperature-low"></i>
+              </div>
+              <div class="details">
+                <p>Feels Like</p>
+                <p><span id="feelLike">--</span><span>°C</span></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-12 pt-2 pb-2">
+            <div class="box-details">
+              <div class="icon-box blue">
+                <i class="fa-solid fa-droplet"></i>
+              </div>
+              <div class="details">
+                <p>Humidity</p>
+                <p><span id="humidity">--</span><span>%</span></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-12 pt-2 pb-2">
+            <div class="box-details">
+              <div class="icon-box green">
+                <i class="fa-solid fa-wind"></i>
+              </div>
+              <div class="details">
+                <p>Wind Speed</p>
+                <p><span id="windSpeed">--</span><span>km/h</span></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-12 pt-2 pb-2">
+            <div class="box-details">
+              <div class="icon-box purple">
+                <i class="fa-solid fa-chart-simple"></i>
+              </div>
+              <div class="details">
+                <p>Pressure</p>
+                <p><span id="pressure">--</span><span>hPa</span></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-12 pt-2 pb-2">
+            <div class="box-details">
+              <div class="icon-box yellow">
+                <i class="fa-solid fa-eye"></i>
+              </div>
+              <div class="details">
+                <p>Visibility</p>
+                <p><span id="visibility">--</span><span>km</span></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-12 pt-2 pb-2">
+            <div class="box-details">
+              <div class="icon-box cyan">
+                <i class="fa-solid fa-cloud-rain"></i>
+              </div>
+              <div class="details">
+                <p>Rain / Precipitation</p>
+                <p><span id="rain">--</span><span>mm</span></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-12 pt-2 pb-2">
+            <div class="box-details">
+              <div class="icon-box orange">
+                <i class="fa-solid fa-sun"></i>
+              </div>
+              <div class="details">
+                <p>UV Index</p>
+                <p><span id="uvIndex">--</span></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-12 pt-2 pb-2">
+            <div class="box-details">
+              <div class="icon-box pink">
+                <i class="fa-solid fa-mountain-sun"></i>
+              </div>
+              <div class="details">
+                <p>Sunrise</p>
+                <p><span id="sunrise">--</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <footer>
+        Design & Developed by
+        <a href="https://github.com/hashirdilmuradzai">Hashir Dilmurad Zai</a>
+      </footer>
     </main>
   </body>
 </html>
