@@ -18,8 +18,8 @@
 }
 
 body {
-  background: linear-gradient(var(--bg)), url("./images/bg.png");
-  background-position: bottom;
+  background: linear-gradient(var(--bg)), url("./images/bg.jpg");
+  background-position: center;
   background-size: 100% 100%;
   background-repeat: no-repeat;
   color: var(--text);
