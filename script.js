@@ -24,7 +24,7 @@ async function getWeather(event) {
   const inputValue = document.querySelector("#input-value").value;
 
   const apiData = await axios(
-    `http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${inputValue}`,
+    `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${inputValue}`,
   );
 
   city.innerHTML = apiData.data.location.name;
