@@ -19,30 +19,34 @@ const uvIndex = document.querySelector("#uv-index");
 const snow = document.querySelector("#snow");
 
 async function getWeather(event) {
-  event.preventDefault();
+  try {
+    event.preventDefault();
 
-  const inputValue = document.querySelector("#input-value").value;
+    const inputValue = document.querySelector("#input-value").value;
 
-  const apiData = await axios(
-    `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${inputValue}`,
-  );
+    const apiData = await axios(
+      `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${inputValue}`,
+    );
 
-  city.innerHTML = apiData.data.location.name;
-  date.innerHTML = apiData.data.location.localtime;
-  weatherIcon.innerHTML = `<img src="apiData.data.current.condition.icon" alt="apiData.data.current.condition.text"`;
-  temperatureCelsius.innerHTML = apiData.data.current.temp_c;
-  temperatureFahrenheit.innerHTML = apiData.data.current.temp_f;
-  weatherCondition.innerHTML = apiData.data.current.condition.text;
-  feelLikeCelsius.innerHTML = apiData.data.current.feelslike_c;
-  feelLikeFahrenheit.innerHTML = apiData.data.current.feelslike_f;
-  humidity.innerHTML = apiData.data.current.humidity;
-  windSpeedKMH.innerHTML = apiData.data.current.wind_kph;
-  windSpeedMPH.innerHTML = apiData.data.current.wind_mph;
-  pressureMB.innerHTML = apiData.data.current.pressure_mb;
-  pressureIN.innerHTML = apiData.data.current.pressure_in;
-  visibilityKM.innerHTML = apiData.data.current.vis_km;
-  visibilityMiles.innerHTML = apiData.data.current.vis_miles;
-  rain.innerHTML = apiData.data.current.chance_of_rain;
-  uvIndex.innerHTML = apiData.data.current.uv;
-  snow.innerHTML = apiData.data.current.chance_of_snow;
+    city.innerHTML = apiData.data.location.name;
+    date.innerHTML = apiData.data.location.localtime;
+    weatherIcon.innerHTML = `<img src="apiData.data.current.condition.icon" alt="apiData.data.current.condition.text"`;
+    temperatureCelsius.innerHTML = apiData.data.current.temp_c;
+    temperatureFahrenheit.innerHTML = apiData.data.current.temp_f;
+    weatherCondition.innerHTML = apiData.data.current.condition.text;
+    feelLikeCelsius.innerHTML = apiData.data.current.feelslike_c;
+    feelLikeFahrenheit.innerHTML = apiData.data.current.feelslike_f;
+    humidity.innerHTML = apiData.data.current.humidity;
+    windSpeedKMH.innerHTML = apiData.data.current.wind_kph;
+    windSpeedMPH.innerHTML = apiData.data.current.wind_mph;
+    pressureMB.innerHTML = apiData.data.current.pressure_mb;
+    pressureIN.innerHTML = apiData.data.current.pressure_in;
+    visibilityKM.innerHTML = apiData.data.current.vis_km;
+    visibilityMiles.innerHTML = apiData.data.current.vis_miles;
+    rain.innerHTML = apiData.data.current.chance_of_rain;
+    uvIndex.innerHTML = apiData.data.current.uv;
+    snow.innerHTML = apiData.data.current.chance_of_snow;
+  } catch (error) {
+    alert(error);
+  }
 }
