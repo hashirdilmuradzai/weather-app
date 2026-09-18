@@ -30,7 +30,7 @@ async function getWeather(event) {
 
     city.innerHTML = apiData.data.location.name;
     date.innerHTML = apiData.data.location.localtime;
-    weatherIcon.innerHTML = `<img src="apiData.data.current.condition.icon" alt="apiData.data.current.condition.text"`;
+    weatherIcon.src = apiData.data.current.condition.icon;
     temperatureCelsius.innerHTML = apiData.data.current.temp_c;
     temperatureFahrenheit.innerHTML = apiData.data.current.temp_f;
     weatherCondition.innerHTML = apiData.data.current.condition.text;
@@ -46,6 +46,8 @@ async function getWeather(event) {
     rain.innerHTML = apiData.data.current.chance_of_rain;
     uvIndex.innerHTML = apiData.data.current.uv;
     snow.innerHTML = apiData.data.current.chance_of_snow;
+
+    console.log(apiData);
   } catch (error) {
     alert(error);
   }
