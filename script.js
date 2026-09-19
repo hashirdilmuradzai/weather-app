@@ -17,6 +17,7 @@ const visibilityMiles = document.querySelector("#visibility-miles");
 const rain = document.querySelector("#rain");
 const uvIndex = document.querySelector("#uv-index");
 const snow = document.querySelector("#snow");
+const errorMessage = document.querySelector("#error-message");
 
 async function getWeather(event) {
   try {
@@ -46,9 +47,13 @@ async function getWeather(event) {
     rain.innerHTML = apiData.data.current.chance_of_rain;
     uvIndex.innerHTML = apiData.data.current.uv;
     snow.innerHTML = apiData.data.current.chance_of_snow;
-
-    console.log(apiData);
   } catch (error) {
-    alert(error);
+    console.log(error.response);
+
+    errorMessage.innerHTML = `<p class="error-message">${error.response.data.error.message}</p>`;
+
+    document.querySelector(".weather-panel-sec").style.display = "none";
+
+    document.querySelector(".weather-panel-sec2").style.display = "none";
   }
 }
